@@ -26,6 +26,12 @@ public class PlayerJump : MonoBehaviour
         if (Mathf.Abs(rigidBody.velocity.y) < 0.05)
         {
             canJump = true;
+
+            if (Input.GetKey("q"))
+            this.GetComponent<Rigidbody>().useGravity = false; // Disable
+
+            if (Input.GetKey("e"))
+                this.GetComponent<Rigidbody>().useGravity = true; // Enable
         }
         else
         {
